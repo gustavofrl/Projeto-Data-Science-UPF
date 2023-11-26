@@ -3,11 +3,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
 import os
+import pdfkit
 
 url = "https://raw.githubusercontent.com/ageron/handson-ml2/master/datasets/housing/housing.csv"
 housing = pd.read_csv(url)
-
-# Calculando estatísticas descritivas
 summary_stats = housing.describe()
 
 # grafico valor medio das casas na california
@@ -15,7 +14,7 @@ housing["median_house_value"].hist(bins=50, figsize=(10, 5))
 plt.title("Valor Médio das Casas")
 plt.xlabel("Valor Médio das Casas ($)")
 plt.ylabel("Frequência")
-img_filename1 = os.path.join('imagens', "historico_valor_casas.png")
+img_filename1 = os.path.join('raiz/imagens', "historico_valor_casas.png")
 plt.savefig(img_filename1)
 plt.close()
 
@@ -48,7 +47,7 @@ for col in ["median_income", "housing_median_age", "median_house_value"]:
     plt.xticks(rotation=45, ha="right")
     plt.tight_layout()
 
-    img_filename2 = os.path.join('imagens', f"{col}_por_proximidade_oceano.png")
+    img_filename2 = os.path.join('raiz/imagens', f"{col}_por_proximidade_oceano.png")
     plt.savefig(img_filename2)
     
     plt.close() 
@@ -72,17 +71,17 @@ Prever os preços das casas na Califórnia com base em diversos recursos.
 
 ## Análise Exploratória de Dados
 - Visualização do Valor Médio das Casas:
-![Valor Médio das Casas](imagens/historico_valor_casas.png)
+![Valor Médio das Casas](raiz/imagenss/historico_valor_casas.png)
 
 - Boxplots de Variáveis Importantes por Proximidade ao Oceano:
   - Renda Média:
-  ![Renda Média](imagens/median_income_por_proximidade_oceano.png)
+  ![Renda Média](raiz/imagens/median_income_por_proximidade_oceano.png)
 
   - Idade Média das Casas:
-  ![Idade Média das Casas](imagens/housing_median_age_por_proximidade_oceano.png)
+  ![Idade Média das Casas](raiz/imagens/housing_median_age_por_proximidade_oceano.png)
 
   - Valor Médio das Casas:
-  ![Valor Médio das Casas](imagens/median_house_value_por_proximidade_oceano.png)
+  ![Valor Médio das Casas](raiz/imagens/median_house_value_por_proximidade_oceano.png)
 
 ## Modelos Utilizados ou Desenvolvidos
 - Neste script de exemplo, a ênfase foi na análise exploratória de dados, e nenhum modelo de aprendizado de máquina específico foi desenvolvido. 
@@ -90,11 +89,13 @@ Prever os preços das casas na Califórnia com base em diversos recursos.
 
 ## Resultados Obtidos
 - Algumas estatísticas descritivas:
+
 {summary_stats.to_markdown()}
 
 - Data do Relatório: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 """
 
-report_filename = "report.md"
+report_filename = os.path.join('raiz', "report.md")
 with open(report_filename, "w", encoding="utf-8") as file:
     file.write(report_content)
+

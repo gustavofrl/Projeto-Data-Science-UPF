@@ -16,17 +16,17 @@ Prever os preços das casas na Califórnia com base em diversos recursos.
 
 ## Análise Exploratória de Dados
 - Visualização do Valor Médio das Casas:
-![Valor Médio das Casas](imagens/historico_valor_casas.png)
+![Valor Médio das Casas](raiz/imagenss/historico_valor_casas.png)
 
 - Boxplots de Variáveis Importantes por Proximidade ao Oceano:
   - Renda Média:
-  ![Renda Média](imagens/median_income_por_proximidade_oceano.png)
+  ![Renda Média](raiz/imagens/median_income_por_proximidade_oceano.png)
 
   - Idade Média das Casas:
-  ![Idade Média das Casas](imagens/housing_median_age_por_proximidade_oceano.png)
+  ![Idade Média das Casas](raiz/imagens/housing_median_age_por_proximidade_oceano.png)
 
   - Valor Médio das Casas:
-  ![Valor Médio das Casas](imagens/median_house_value_por_proximidade_oceano.png)
+  ![Valor Médio das Casas](raiz/imagens/median_house_value_por_proximidade_oceano.png)
 
 ## Modelos Utilizados ou Desenvolvidos
 - Neste script de exemplo, a ênfase foi na análise exploratória de dados, e nenhum modelo de aprendizado de máquina específico foi desenvolvido. 
@@ -34,6 +34,7 @@ Prever os preços das casas na Califórnia com base em diversos recursos.
 
 ## Resultados Obtidos
 - Algumas estatísticas descritivas:
+
 |       |   longitude |    latitude |   housing_median_age |   total_rooms |   total_bedrooms |   population |   households |   median_income |   median_house_value |
 |:------|------------:|------------:|---------------------:|--------------:|-----------------:|-------------:|-------------:|----------------:|---------------------:|
 | count | 20640       | 20640       |           20640      |      20640    |        20433     |     20640    |     20640    |     20640       |                20640 |
@@ -45,4 +46,4 @@ Prever os preços das casas na Califórnia com base em diversos recursos.
 | 75%   |  -118.01    |    37.71    |              37      |       3148    |          647     |      1725    |       605    |         4.74325 |               264725 |
 | max   |  -114.31    |    41.95    |              52      |      39320    |         6445     |     35682    |      6082    |        15.0001  |               500001 |
 
-- Data do Relatório: 2023-11-26 13:20:18
+- Data do Relatório: 2023-11-26 16:06:21
