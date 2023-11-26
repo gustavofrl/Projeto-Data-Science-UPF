@@ -71,17 +71,17 @@ Prever os preços das casas na Califórnia com base em diversos recursos.
 
 ## Análise Exploratória de Dados
 - Visualização do Valor Médio das Casas:
-![Valor Médio das Casas](raiz/imagenss/historico_valor_casas.png)
+![Valor Médio das Casas](imagenss/historico_valor_casas.png)
 
 - Boxplots de Variáveis Importantes por Proximidade ao Oceano:
   - Renda Média:
-  ![Renda Média](raiz/imagens/median_income_por_proximidade_oceano.png)
+  ![Renda Média](imagens/median_income_por_proximidade_oceano.png)
 
   - Idade Média das Casas:
-  ![Idade Média das Casas](raiz/imagens/housing_median_age_por_proximidade_oceano.png)
+  ![Idade Média das Casas](imagens/housing_median_age_por_proximidade_oceano.png)
 
   - Valor Médio das Casas:
-  ![Valor Médio das Casas](raiz/imagens/median_house_value_por_proximidade_oceano.png)
+  ![Valor Médio das Casas](imagens/median_house_value_por_proximidade_oceano.png)
 
 ## Modelos Utilizados ou Desenvolvidos
 - Neste script de exemplo, a ênfase foi na análise exploratória de dados, e nenhum modelo de aprendizado de máquina específico foi desenvolvido. 
