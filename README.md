@@ -8,6 +8,9 @@ O projeto tem como objetivo realizar uma análise abrangente sobre os preços de
 
 ## Conteúdo
 
+- **Pasta Raiz:**
+  - Este diretório concentra todos os arquivos do projeto.
+
 - **Código Fonte:**
   - O diretório 'codigo' contém o script principal, 'gerar_report.py', que realiza a análise exploratória de dados, gera visualizações e cria um relatório em Markdown.
 
@@ -15,7 +18,7 @@ O projeto tem como objetivo realizar uma análise abrangente sobre os preços de
   - A pasta 'imagens' armazena as visualizações geradas pelo script, incluindo gráficos de boxplot e histogramas.
 
 - **Relatório:**
-  - O arquivo 'report.md' é o relatório final do projeto, apresentando detalhes sobre o tema, URL no GitHub, dataset utilizado, modelos desenvolvidos e resultados obtidos.
+  - O arquivo 'report.md' é o relatório final do projeto, apresentando detalhes sobre o tema, URL no GitHub, dataset utilizado, modelos desenvolvidos e resultados obtidos, o mesmo fica na raiz.
 
 ## Como Utilizar Este Repositório
 
