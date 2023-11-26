@@ -24,8 +24,8 @@ O projeto tem como objetivo realizar uma análise abrangente sobre os preços de
 
 1. **Clonar o Repositório:**
    ```bash
-   git clone https://github.com/SEU_USUARIO_GITHUB/NOME_DO_REPOSITORIO.git
-   cd NOME_DO_REPOSITORIO
+   git clone https://github.com/gustavofrl/projeto_relatorio_DS.git
+   cd projeto_relatorio_DS
 
 1. **Executar o Script:**
    ```bash
