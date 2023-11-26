@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
 import os
-import pdfkit
 
 url = "https://raw.githubusercontent.com/ageron/handson-ml2/master/datasets/housing/housing.csv"
 housing = pd.read_csv(url)
 summary_stats = housing.describe()
+report_content = ""
 
 # grafico valor medio das casas na california
 housing["median_house_value"].hist(bins=50, figsize=(10, 5))
@@ -18,7 +18,7 @@ img_filename1 = os.path.join('raiz/imagens', "historico_valor_casas.png")
 plt.savefig(img_filename1)
 plt.close()
 
-# graficos por proximidade ao ocenao
+# graficos por proximidade ao oceano
 for col in ["median_income", "housing_median_age", "median_house_value"]:
     plt.figure(figsize=(8, 5))
     
@@ -52,7 +52,35 @@ for col in ["median_income", "housing_median_age", "median_house_value"]:
     
     plt.close() 
 
-# relatório em Markdown
+results_section = """
+## Resultados Obtidos
+
+Nesta seção, apresentamos uma análise detalhada das estatísticas descritivas do conjunto de dados "California Housing Prices". Essas estatísticas fornecem insights valiosos sobre as características e distribuições das variáveis relevantes, fornecendo uma base sólida para a compreensão do cenário imobiliário na Califórnia. Abaixo estão alguns pontos-chave destacados pelas estatísticas descritivas:
+
+### 1. Longitude e Latitude
+- **Longitude Média:** As coordenadas geográficas médias indicam uma localização centralizada, aproximadamente a {longitude_mean}.
+- **Latitude Média:** A latitude média, em torno de {latitude_mean}, sugere que os dados se concentram em uma região específica da Califórnia.
+
+### 2. Idade Média das Casas
+- **Média de Idade das Casas:** A idade média das casas na região é de {median_age_mean} anos. Isso pode influenciar significativamente as preferências dos compradores e as condições gerais do mercado imobiliário.
+
+### 3. Renda Média
+- **Renda Média:** A renda média da população local é de {median_income_mean}, indicando o potencial de compra dos residentes.
+
+### 4. Valores Médios das Casas
+- **Valor Médio das Casas:** O valor médio das casas é de ${median_house_value_mean}. Esta informação é crucial para avaliar a acessibilidade e a faixa de preços do mercado imobiliário.
+
+### 5. Distribuição de População e Habitações
+- **População Média:** A população média é de {population_mean}, enquanto o número médio de domicílios é de {households_mean}. Esses números refletem o tamanho médio das comunidades locais.
+
+### 6. Estatísticas Adicionais
+- **Variabilidade:** A presença de desvios padrão e valores mínimos e máximos fornece insights sobre a variabilidade e a amplitude das variáveis em questão.
+
+Essas análises estatísticas formam a base para as etapas subsequentes do projeto, permitindo uma compreensão mais profunda das nuances do mercado imobiliário da Califórnia. Além disso, servirão como referência ao explorar relações mais complexas e ao desenvolver modelos preditivos no decorrer do projeto.
+"""
+
+report_content += results_section
+report_content += f"\n\n- Data do Relatório: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 report_content = f"""
 # Relatório do Projeto: California Housing Prices
 
@@ -71,31 +99,29 @@ Prever os preços das casas na Califórnia com base em diversos recursos.
 
 ## Análise Exploratória de Dados
 - Visualização do Valor Médio das Casas:
-![Valor Médio das Casas](imagenss/historico_valor_casas.png)
+![Valor Médio das Casas](imagens/historico_valor_casas.png)
 
-- Boxplots de Variáveis Importantes por Proximidade ao Oceano:
+- Variáveis Importantes por Proximidade ao Oceano:
+
   - Renda Média:
+
   ![Renda Média](imagens/median_income_por_proximidade_oceano.png)
 
   - Idade Média das Casas:
+
   ![Idade Média das Casas](imagens/housing_median_age_por_proximidade_oceano.png)
 
   - Valor Médio das Casas:
+
   ![Valor Médio das Casas](imagens/median_house_value_por_proximidade_oceano.png)
 
-## Modelos Utilizados ou Desenvolvidos
-- Neste script de exemplo, a ênfase foi na análise exploratória de dados, e nenhum modelo de aprendizado de máquina específico foi desenvolvido. 
-  Futuramente, ao evoluir o projeto, modelos podem ser explorados e incluídos nesta seção.
+{results_section}
 
-## Resultados Obtidos
 - Algumas estatísticas descritivas:
 
 {summary_stats.to_markdown()}
-
-- Data do Relatório: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
 """
 
 report_filename = os.path.join('raiz', "report.md")
 with open(report_filename, "w", encoding="utf-8") as file:
     file.write(report_content)
-
