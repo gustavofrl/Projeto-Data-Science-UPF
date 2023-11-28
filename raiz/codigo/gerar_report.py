@@ -52,6 +52,14 @@ for col in ["median_income", "housing_median_age", "median_house_value"]:
     
     plt.close() 
 
+longitude_mean = summary_stats.loc["mean", "longitude"]
+latitude_mean = summary_stats.loc["mean", "latitude"]
+median_age_mean = summary_stats.loc["mean", "housing_median_age"]
+median_income_mean = summary_stats.loc["mean", "median_income"]
+median_house_value_mean = summary_stats.loc["mean", "median_house_value"]
+population_mean = summary_stats.loc["mean", "population"]
+households_mean = summary_stats.loc["mean", "households"]
+
 results_section = """
 ## Resultados Obtidos
 
