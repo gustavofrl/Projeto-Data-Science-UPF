@@ -60,35 +60,6 @@ median_house_value_mean = summary_stats.loc["mean", "median_house_value"]
 population_mean = summary_stats.loc["mean", "population"]
 households_mean = summary_stats.loc["mean", "households"]
 
-results_section = """
-## Resultados Obtidos
-
-Nesta seção, apresentamos uma análise detalhada das estatísticas descritivas do conjunto de dados "California Housing Prices". Essas estatísticas fornecem insights valiosos sobre as características e distribuições das variáveis relevantes, fornecendo uma base sólida para a compreensão do cenário imobiliário na Califórnia. Abaixo estão alguns pontos-chave destacados pelas estatísticas descritivas:
-
-### 1. Longitude e Latitude
-- **Longitude Média:** As coordenadas geográficas médias indicam uma localização centralizada, aproximadamente a {longitude_mean:.2f}.
-- **Latitude Média:** A latitude média, em torno de {latitude_mean:.2f}, sugere que os dados se concentram em uma região específica da Califórnia.
-
-### 2. Idade Média das Casas
-- **Média de Idade das Casas:** A idade média das casas na região é de {median_age_mean:.2f} anos. Isso pode influenciar significativamente as preferências dos compradores e as condições gerais do mercado imobiliário.
-
-### 3. Renda Média
-- **Renda Média:** A renda média da população local é de {median_income_mean:.2f}, indicando o potencial de compra dos residentes.
-
-### 4. Valores Médios das Casas
-- **Valor Médio das Casas:** O valor médio das casas é de ${median_house_value_mean:,.2f}. Esta informação é crucial para avaliar a acessibilidade e a faixa de preços do mercado imobiliário.
-
-### 5. Distribuição de População e Habitações
-- **População Média:** A população média é de {population_mean:.2f}, enquanto o número médio de domicílios é de {households_mean:.2f}. Esses números refletem o tamanho médio das comunidades locais.
-
-### 6. Estatísticas Adicionais
-- **Variabilidade:** A presença de desvios padrão e valores mínimos e máximos fornece insights sobre a variabilidade e a amplitude das variáveis em questão.
-
-Essas análises estatísticas formam a base para as etapas subsequentes do projeto, permitindo uma compreensão mais profunda das nuances do mercado imobiliário da Califórnia. Além disso, servirão como referência ao explorar relações mais complexas e ao desenvolver modelos preditivos no decorrer do projeto.
-"""
-
-report_content += results_section
-report_content += f"\n\n- Data do Relatório: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 report_content = f"""
 # Relatório do Projeto: California Housing Prices
 
@@ -123,11 +94,30 @@ Prever os preços das casas na Califórnia com base em diversos recursos.
 
   ![Valor Médio das Casas](imagens/median_house_value_por_proximidade_oceano.png)
 
-{results_section}
+## Resultados Obtidos
 
-- Algumas estatísticas descritivas:
+Nesta seção, apresentamos uma análise detalhada das estatísticas descritivas do conjunto de dados "California Housing Prices". Essas estatísticas fornecem insights valiosos sobre as características e distribuições das variáveis relevantes, fornecendo uma base sólida para a compreensão do cenário imobiliário na Califórnia. Abaixo estão alguns pontos-chave destacados pelas estatísticas descritivas:
 
-{summary_stats.to_markdown()}
+### 1. Longitude e Latitude
+- **Longitude Média:** As coordenadas geográficas médias indicam uma localização centralizada, aproximadamente a {longitude_mean:.2f}.
+- **Latitude Média:** A latitude média, em torno de {latitude_mean:.2f}, sugere que os dados se concentram em uma região específica da Califórnia.
+
+### 2. Idade Média das Casas
+- **Média de Idade das Casas:** A idade média das casas na região é de {median_age_mean:.2f} anos. Isso pode influenciar significativamente as preferências dos compradores e as condições gerais do mercado imobiliário.
+
+### 3. Renda Média
+- **Renda Média:** A renda média da população local é de {median_income_mean:.2f}, indicando o potencial de compra dos residentes.
+
+### 4. Valores Médios das Casas
+- **Valor Médio das Casas:** O valor médio das casas é de ${median_house_value_mean:,.2f}. Esta informação é crucial para avaliar a acessibilidade e a faixa de preços do mercado imobiliário.
+
+### 5. Distribuição de População e Habitações
+- **População Média:** A população média é de {population_mean:.2f}, enquanto o número médio de domicílios é de {households_mean:.2f}. Esses números refletem o tamanho médio das comunidades locais.
+
+### 6. Estatísticas Adicionais
+- **Variabilidade:** A presença de desvios padrão e valores mínimos e máximos fornece insights sobre a variabilidade e a amplitude das variáveis em questão.
+
+Essas análises estatísticas formam a base para as etapas subsequentes do projeto, permitindo uma compreensão mais profunda das nuances do mercado imobiliário da Califórnia. Além disso, servirão como referência ao explorar relações mais complexas e ao desenvolver modelos preditivos no decorrer do projeto.
 """
 
 report_filename = os.path.join('raiz', "report.md")
