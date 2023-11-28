@@ -118,6 +118,10 @@ Nesta seção, apresentamos uma análise detalhada das estatísticas descritivas
 - **Variabilidade:** A presença de desvios padrão e valores mínimos e máximos fornece insights sobre a variabilidade e a amplitude das variáveis em questão.
 
 Essas análises estatísticas formam a base para as etapas subsequentes do projeto, permitindo uma compreensão mais profunda das nuances do mercado imobiliário da Califórnia. Além disso, servirão como referência ao explorar relações mais complexas e ao desenvolver modelos preditivos no decorrer do projeto.
+
+- Algumas estatísticas descritivas:
+
+{summary_stats.to_markdown()}
 """
 
 report_filename = os.path.join('raiz', "report.md")
